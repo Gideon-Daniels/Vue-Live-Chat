@@ -2,6 +2,7 @@
 import firebase from 'firebase/compat/app'
 // importing firestore
 import 'firebase/compat/firestore'
+import 'firebase/compat/auth'
 // object copied from app settings 
 const firebaseConfig = {
     apiKey: "AIzaSyBsgrf1aGhG_wLFoTfjWhNvVSRsm00RXIQ",
@@ -14,6 +15,9 @@ const firebaseConfig = {
 // init firebase
   firebase.initializeApp(firebaseConfig)
 
+
+// creating firebase auth instance
+  const projectAuth = firebase.auth()
 //   creating instance of firestore
   const projectFirestore = firebase.firestore()
 // creating instance of timestamp function 

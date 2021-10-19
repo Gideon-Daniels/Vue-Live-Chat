@@ -1,7 +1,7 @@
 <template>
     <form @submit.prevent="handleSubmit">
-        <input type="email" v-model="email">
-        <input type="password" v-model="password">
+        <input type="email" v-model="email" required placeholder="email">
+        <input type="password" v-model="password" required placeholder="password">
         <button>Login</button>
     </form>
 </template>
