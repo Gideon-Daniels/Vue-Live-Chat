@@ -12,11 +12,10 @@ const requireAuth = (to, from, next) => {
   if(!user){
     next({ name: 'Welcome'})
   }else{
+    // allow view-router to carry on to next route
     next()
   }
-
-  // allow view-router to carry on to next route
-  next()
+ 
 }
 
 const routes = [
