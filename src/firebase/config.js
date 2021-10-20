@@ -15,7 +15,6 @@ const firebaseConfig = {
 // init firebase
   firebase.initializeApp(firebaseConfig)
 
-
 // creating firebase auth instance
   const projectAuth = firebase.auth()
 //   creating instance of firestore

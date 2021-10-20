@@ -5,13 +5,13 @@ const getCollection = (collection) => {
     const documents = ref(null)
     const error = ref(null)
 
-    let collectionRef = projectFirestore.collection(collection)
+    let collectionRef = projectFirestore
+        .collection(collection)
         .orderBy('createdAt')
 
        // setup realtime listener with onSnapShot 
     const unsub = collectionRef.onSnapshot( (snap) => {
         let results = [];
-        console.log(snap)
         snap.docs.forEach((doc) => {
             
             // needed when using realtime data
