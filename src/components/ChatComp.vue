@@ -14,7 +14,8 @@
 <script>
 import getCollection from '../composables/getCollection';
 import { formatDistanceToNow } from 'date-fns'
-import { computed } from '@vue/reactivity';
+import { computed, ref } from '@vue/reactivity';
+import { onUpdated } from '@vue/runtime-core';
 export default {
     setup(){
         
@@ -29,7 +30,14 @@ export default {
             }
         })
 
-        return { error, documents, formattedDocuments }
+        // auto-scroll to bottom of messages
+        const messages = ref(null)
+
+        onUpdated( () => {
+            messages.value.scrollTop = messages.value.scrollHeight
+        })
+
+        return { error, documents, formattedDocuments, messages }
     },
     updated(){
         console.log('doc', this.documents)
