@@ -3,12 +3,12 @@
     <p>Welcome</p>
 
     <div v-if="showLogin">
-        <h2>Login</h2>
+        <h2>Login to the chat room</h2>
         <LoginForm @login="enterChat" />
         <p>No account yet? <span @click="showLogin=false">Signup</span> instead</p>
     </div>
     <div v-else>
-        <h2>Sign up</h2>
+        <h2>Signup to the chatroom</h2>
         <SignupForm @login="enterChat" />
         <p>Alreadt registered? <span @click="showLogin = true">Login</span> instead</p>
     </div>
